@@ -1,0 +1,18 @@
+name = "ai-chat-app"
+main = "src/worker.js"
+compatibility_date = "2025-01-01"
+
+# Frontend statis. Hanya /api/* dan /health yang dijalankan Worker; sisanya langsung dari public/.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/health"]
+
+# Non-rahasia. baseUrl HARUS sama persis dengan public/config.js -> app.defaultProvider.baseUrl
+[vars]
+DEFAULT_BASE_URL = "https://api.groq.com/openai/v1"
+DEFAULT_KEY_DAILY_LIMIT = "200"
+
+# DEFAULT_API_KEY = RAHASIA, jangan ditaruh di sini.
+# Set lewat: Dashboard -> Workers -> ai-chat-app -> Settings -> Variables and Secrets (Secret),
+# atau: npx wrangler secret put DEFAULT_API_KEY

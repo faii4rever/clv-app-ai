@@ -1,0 +1,11 @@
+{
+  "name": "ai-chat-app",
+  "version": "2.2.0",
+  "description": "Aplikasi chat AI open source multi-provider (versi Cloudflare Workers)",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
+  },
+  "engines": { "node": ">=18.0.0" },
+  "license": "MIT"
+}
